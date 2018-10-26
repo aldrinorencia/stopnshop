@@ -1,7 +1,7 @@
 {
     "name": "nodetest",
     "version": "1.0.0",
-    "description": "This is our activity for javascript and node.js lesson.",
+    "description": "Stop&Shop",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
         "javascript",
         "npm"
     ],
-    "author": "Aries Brylle Ventura",
+    "author": "Aldrin",
     "license": "ISC",
     "dependencies": {
         "axios": "^0.18.0",

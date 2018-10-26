@@ -8,14 +8,14 @@ let message = '';
 
 // route using express js
 router.get('/', (req, res) => {
-    let notes = [];
-    axios.get(`http://localhost:${PORT}/notes`)
+    let shops = [];
+    axios.get(`http://localhost:${PORT}/shops`)
         .then((response) => {
-            notes = response.data;
+            shops = response.data;
             const model = {
                 title: req.viewModel.title,
-                seasons: [2014, 2015, 2016, 2017, 2018],
-                note: notes,
+                seasons: ["a", "b", "c", "d"],
+                shop: shops,
                 isSuccess: isSuccess,
                 message: message
             };
@@ -29,11 +29,11 @@ router.get('/', (req, res) => {
 
 
 
-router.post('/notes_update/:id', (req, res) => {
-    axios.put(`http://localhost:${PORT}/notes/${req.params.id}`, req.body)
+router.post('/shops_update/:id', (req, res) => {
+    axios.put(`http://localhost:${PORT}/shops/${req.params.id}`, req.body)
         .then((response) => {
             isSuccess = true;
-            message = 'Task has been successfully updated.';
+            message = 'It has been successfully updated.';
             res.redirect('/');
         }).catch((err) => {
             console.log(err);
@@ -41,11 +41,11 @@ router.post('/notes_update/:id', (req, res) => {
         });
 });
 
-router.post('/notes_delete/:id', (req, res) => {
-    axios.delete(`http://localhost:${PORT}/notes/${req.params.id}`)
+router.post('/shops_delete/:id', (req, res) => {
+    axios.delete(`http://localhost:${PORT}/shops/${req.params.id}`)
         .then((response) => {
             isSuccess = true;
-            message = 'Task has been successfully deleted.';
+            message = 'It has been successfully deleted.';
             res.redirect('/');
         }).catch((err) => {
             console.log(err);
@@ -53,11 +53,11 @@ router.post('/notes_delete/:id', (req, res) => {
         });
 });
 
-router.post('/notes_add', (req, res) => {
-    axios.post(`http://localhost:${PORT}/notes`, req.body)
+router.post('/shops_add', (req, res) => {
+    axios.post(`http://localhost:${PORT}/shops`, req.body)
         .then((response) => {
             isSuccess = true;
-            message = 'Task has been successfully added.';
+            message = 'It has been successfully added.';
             res.redirect('/');
         }).catch((err) => {
             console.log(err);

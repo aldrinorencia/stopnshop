@@ -1,34 +1,18 @@
 {
-	"notes": [
+	"shops": [
 		{
 			"id": 1,
-			"title": "Activity 1",
-			"description": "<p>Create a <b>CRUD</b> using <b>nodejs</b> and pug <b>templating</b>.</p><p>Please refer to this&nbsp;<a href=\"https://github.com/onezeronine/cardo\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255);\">link</a>.</p>"
+			"title": "Nike",
+			"quantity": "12",
+			"price": "5,900",
+			"files": ""
 		},
 		{
 			"id": 2,
-			"title": "Assignment in IS 214",
-			"description": "<p>Please visit <b>google.com.</b></p>"
-		},
-		{
-			"id": 3,
-			"title": "Node.js Test",
-			"description": "<p style=\"margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;\"><br class=\"Apple-interchange-newline\">Unionbank Blockchain Activity</p><p style=\"margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;\"><span style=\"font-weight: 600;\">Download</span>&nbsp;this repository.</p><p style=\"margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;\">Execute&nbsp;<span style=\"font-weight: 600;\">npm install</span>&nbsp;to install dependency</p><p style=\"color: rgb(36, 41, 46); font-family: -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px; margin-bottom: 0px !important;\">To start the program execute&nbsp;<span style=\"font-weight: 600;\">npm start</span></p>"
-		},
-		{
-			"id": 4,
-			"title": "To do List",
-			"description": "This is to do list."
-		},
-		{
-			"id": 5,
-			"title": "Sample using vuejs",
-			"description": "yey!"
-		},
-		{
-			"id": 6,
-			"title": "Blockchain Activity",
-			"description": "Create CRUD using nodejs and vuejs"
+			"title": "JanSport",
+			"quantity": "10",
+			"price": "3,500",
+			"files": "bag.png"
 		}
 	]
 }

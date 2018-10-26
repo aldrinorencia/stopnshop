@@ -12,68 +12,90 @@ head
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
         crossorigin="anonymous"
     )
-    link(href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
     script(
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous")
     script(src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js") 
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js")
 
 body
+
     main(role="main" class="container")
-        h1#movieTitle(class="mt-5") 
-        p(class="lead") This is my activity for the <b>Node.js</b> and <b>Javascript</b>. 
-        br
+        center
+            h1#movieTitle(class="mt-5" style="color:#00004d; background-color:orange" )
+            marquee(behavior="slide", direction="right" scrollamount="70" style="font-family:Impact; color:#00004d;") Powered by UnionBank
         div(class="panel panel-primary")
-            div(class="panel-heading") Google with Image
+            
             div(class="panel-body") 
-                .row
-                    each s in seasons
-                        .col
-                            h4=s
-                            img(
-                                style="width: 100%; padding:5px"
-                                src="/img/google.png"
-                            )
-        div(class="panel panel-primary")
-            div(class="panel-heading") Todo List
-            div(class="panel-body") 
+            
                 if isSuccess
                     div(class="alert alert-success")
                         strong Success! 
                             span=message
 
-                form(method="post"  id="myForm" class="form" action="/notes_add")
+                form(method="post"  id="myForm" class="form" action="/shops_add")
                     input(type="hidden" name="id" id="id" class="form-control")
+
                     div(class="col-md-12 form-group")
-                        label(for="title") Title
-                        input(type="text" name="title" id="title" class="form-control" )
+                        label(for="title") ITEM
+                        input(type="text" name="title" id="title" placeholder="input item name" class="form-control" )
+
                     div(class="col-md-12 form-group")
-                        label(for="description") Description
-                        textarea(type="text" name="description" id="description" )
-                    
+                        label(class="note-form-label") Select Images
+                        input(class="note-image-input note-form-control note-input" type="file" name="files" id="files" accept="image/*" multiple="multiple")
+                        br
+                        img(id='imgproduct' width="100px" height="100px")
+                    div(class="col-md-12 form-group")
+                        div(class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value")
+                            label(for="quantity") QUANTITY 
+                            br
+                            input(type="number" id="quantity" value="0" name="quantity")
+                        div(class="value-button" id="increase" onclick="increaseValue()" value="Increase Value")
+
+                    div(class="col-md-12 form-group")
+                        label(for="price") PRICE
+                        input(type="text" name="price" id="price" placeholder="input amount" class="form-control" )
+                        
                     div(class="col-md-6 form-group")
-                        button(type="submit" id="submit" class="btn btn-primary") Add Note
+                        button(type="submit" id="submit" class="btn btn-primary") Add Item
                         span 
                         button#clearBtn(type="button" class="btn btn-default") Clear
                 
                 div(class="col-md-12 form-group")
-                    table(class="table table-bordered")
+                 div(class="panel panel-primary")
+                    div(class="panel-heading") PRODUCT LIST
+                    div(class="panel-body")
+                     table(class="table table-bordered")
                         thead
                             tr
-                                td Title
-                                td Description
-                                td Action
+                                td
+                                    center ITEM
+                                td
+                                    center QUANTITY
+                                td
+                                    center PRICE 
+                                td  
+                                    center PRODUCT IMAGE
+                                td
+                                    center ACTION
+                                    
                         tbody
-                            each n in note
+                            each n in shop
+                        
                                 tr
                                     td=n.title
-                                    td!=n.description
+                                    td=n.quantity
+                                    td &#8369 
+                                        =n.price 
                                     td
-                                        button(type="button" class="btn btn-success" onclick="getDetails("+n.id+")") Edit 
-                                        span 
-                                        button(type="button" class="btn btn-danger" onclick="deleteTask("+n.id+")") Delete
+                                        center=n.files
+                                            br
+                                            img(id='imgproduct' width="100px" height="100px")
+                                    td
+                                            p(align="right")
+                                                button(type="button" class="btn btn-success" onclick="getDetails("+n.id+")") UPDATE
+                                                span &nbsp
+                                                button(type="button" class="btn btn-danger" onclick="deleteTask("+n.id+")") DELETE
     script(src='/js/main.js')
         
